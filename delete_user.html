@@ -104,7 +104,7 @@
                 if (response) {
                     var db = openDatabase('pharma-db', '1.0', 'pharma db', 2 * 1024 * 1024);
                     db.transaction(function (tx) {
-                        tx.executeSql('DELETE FROM users WHERE username = ?', [usr], alert("deleted successfully");
+                        tx.executeSql('DELETE FROM users WHERE username = ?', [usr], alert("deleted successfully"));
                     });
                 }
             }

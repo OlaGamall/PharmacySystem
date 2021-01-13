@@ -9,6 +9,8 @@ const db = openDatabase('pharma-db', '1.0', 'pharma db', 2 * 1024 * 1024);
 var url = new URL(window.location);
 var param = url.searchParams.get("name");
 $('#itemname').val(param);
+//document.getElementById('datePicker').toLocaleDateString('en-CA');
+document.getElementById("start").valueAsDate = new Date();
 
 function addInvoice(type) {
     var date = $('#start').val();
