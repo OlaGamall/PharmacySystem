@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <title>Pharmacy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if(localStorage.username.length == 0) window.location.href = "login.html";
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark" id="horizontalNav">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Pharmacy</span>
+            <button class="navbar-toggler mr-auto ml-5" id="humberger" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="login.html" onclick="clearLocalStorageUsername()"><img src="icons/logout.svg" width="30" height="30" class="logo-image"></a>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="icons/pharmacy.svg" width="60" height="100" class="container">
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="index.html" class="pl-4"><img src="icons/homepage.svg" class="mr-2 linkimg" width="35"
+                            height="35">Home</a>
+                </li>
+                <li>
+                    <a href="NewItem.html" class="pl-4"><img src="icons/add-objects.svg" class="mr-2 linkimg" width="35"
+                            height="35">Add
+                        Item</a>
+                </li>
+                <li>
+                    <a href="invoice.html" class="pl-4"><img src="icons/bill.svg" class="mr-2 linkimg" width="35" height="35">Add
+                        Invoice</a>
+                </li>
+                <li class="active" id="add_user_tab" style="display: none;">
+                    <a href="#" class="pl-4"><img src="icons/add-user.svg" class="mr-2 linkimg" width="35"
+                            height="35">Add
+                        User</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="navbar-expand w-50 mx-auto">
+            <!-- <div class="row" id="items"> -->
+            <div class="card  bg-light mt-4" >
+                <div class="card-body w-75 mx-auto">
+                    <blockquote class="blockquote">
+                        <div class="text-center">
+                            <h3>Add User</h3>
+                            <!-- <p>Please fill the form...</p> -->
+                            <img src="icons/imag1.svg" alt="..." width="100" height="100" class="  rounded-sm w-20 h-20 ">
+
+                        </div>
+
+                        <form>
+                            <div class="form-group ">
+                                <label for="exampleInputEmail1">User Name</label>
+                                <input type="text" class="form-control " id="exampleInputEmail1"
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group ">
+                                <label for="exampleInputPassword1">password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            <div class="form-group ">
+                                <label for="exampleInputPassword1">Confirm password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword2">
+                            </div>
+                            <button class="btn btn-dark btn-lg btn-block" onclick="addNewUser()">Add</button>
+                        </form>
+
+                    </blockquote>
+                </div> <!-- div of card body -->
+            </div>
+
+            <!-- </div> -->
+        </div>
+    </div>
+
+
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('#humberger').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+
+        });
+        if (localStorage.username == "ola") {
+            document.getElementById("add_user_tab").style.cssText = "display:block";
+        } 
+    </script>
+    <script src="node_modules/md5/dist/md5.min.js"></script>
+    <script src="adduser.js"></script>
+    <script src="general.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Bootstrap icons -->
+  <!-- <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css"> -->
+
+  <title>Login</title>
+</head>
+
+<body>
+  <div class="container mt-4 d-flex justify-content-center">
+    <div class="card my-3 bg-light w-50">
+      <div class="card-body">
+        <blockquote class="blockquote">
+          <div class="text-center">
+            <h2>Welcome</h2>
+            <p>Please Login...</p>
+            <img src="icons/pharmacy.svg" width="120" height="120" class="  rounded-sm w-20 h-20 ">
+
+          </div>
+
+          <form class="w-50 mx-auto mt-4">
+            <div class="form-group ">
+              <label for="usrnametxt">User Name</label>
+              <input type="text" class="form-control " id="usrnametxt" aria-describedby="textHelp">
+            </div>
+            <div class="form-group mb-4">
+              <label for="passwordtxt">Password</label>
+              <input type="password" class="form-control" id="passwordtxt">
+            </div>
+            <a id="login"><button class="btn btn-dark btn-lg btn-block" onclick="getLogin()">Login</button></a>
+          </form>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/md5/dist/md5.min.js"></script>
+  <script src="login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <title>Pharmacy</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .card:hover {
+            box-shadow: 5px 10px 8px 10px #888888;
+        };
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script>
+        if (localStorage.username.length == 0) window.location.href = "login.html";
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark" id="horizontalNav">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Pharmacy</span>
+            <button class="navbar-toggler mr-auto ml-5" id="humberger" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a href="login.html" onclick="clearLocalStorageUsername()"><img src="icons/logout.svg" width="30"
+                    height="30" class="logo-image"></a>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="icons/pharmacy.svg" width="60" height="100" class="container">
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#" class="pl-4"><img src="icons/homepage.svg" class="mr-2 linkimg" width="35"
+                            height="35">Home</a>
+                </li>
+                <li>
+                    <a href="NewItem.html" class="pl-4"><img src="icons/add-objects.svg" class="mr-2 linkimg" width="35"
+                            height="35">Add
+                        Item</a>
+                </li>
+                <li>
+                    <a href="invoice.html" class="pl-4"><img src="icons/bill.svg" class="mr-2 linkimg" width="35"
+                            height="35">Add
+                        Invoice</a>
+                </li>
+                <li id="add_user_tab" style="display: none;">
+                    <a href="Add-User.html" class="pl-4"><img src="icons/add-user.svg" class="mr-2 linkimg" width="35"
+                            height="35">Add
+                        User</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="navbar-expand w-100 mx-3">
+            <div class="row my-3 d-flex justify-content-center" id="items">
+            </div>
+        </div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#humberger').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+
+        });
+        if (localStorage.username == "ola") {
+            document.getElementById("add_user_tab").style.cssText = "display:block";
+        } 
+    </script>
+    <script src="index.js"></script>
+    <script src="general.js"></script>
+</body>
+
+</html>
