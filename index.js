@@ -21,7 +21,7 @@ db.transaction(function (tx) {
                 '</a>' +
                 '<ul class="dropdown-menu" aria-labelledby="navbarDropdown">' +
                 `<li><a id = ${currentItem.name} class="dropdown-item" href="index.html" onclick = "deleteItem(this.id)">Delete</a></li>` +
-                `<li><a class="dropdown-item" href="invoice.html">Make Invoice</a></li>` +
+                `<li><a class="dropdown-item" href="invoice.html?name=${currentItem.name}">Make Invoice</a></li>` +
                 '</ul>' +
                 '</div>' +
                 '</div>' +

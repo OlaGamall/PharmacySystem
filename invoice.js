@@ -5,6 +5,10 @@ const db = openDatabase('pharma-db', '1.0', 'pharma db', 2 * 1024 * 1024);
 //     // tx.executeSql('CREATE TABLE IF NOT EXISTS invoice (id INTEGER PRIMARY KEY AUTOINCREMENT, name, quantity, date, type, user_name)');
 //     // tx.executeSql('INSERT INTO invoice VALUES (1,"cetamoul", 4, "4-12-2019", "sell", "ola")');
 // });
+//$('#start').val(new date());
+var url = new URL(window.location);
+var param = url.searchParams.get("name");
+$('#itemname').val(param);
 
 function addInvoice(type) {
     var date = $('#start').val();
